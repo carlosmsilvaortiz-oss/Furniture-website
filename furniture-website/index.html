@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Furniture Website </title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+   .hero{
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+    .hero video {
+            position: absolute;
+            top: 0%;
+            left: 0%;
+            min-width: 100%;
+            min-height: 100%;
+            object-fit: cover;
+            z-index: 0;
+        }
+
+    .hero::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1;
+        }
+
+    .hero-content {
+            position: relative;
+            top: 50%;
+            transform: translatey(-50%);
+            text-align: center;
+            color: white;
+            z-index: 2;
+            text-shadow: 0px 2px 10px rgba(0, 0, 0, 0.7);
+            padding: 0 20px;
+        }
+
+    .hero-content h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+    .hero-content p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    .hero-button {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            flex-wrap: wrap;
+            }
+
+    .button {
+        text-decoration: none;
+        background-color: rgba(225, 225, 225, 0.2);
+        color: white;
+        padding: 12px 28px;
+        font-size: 1.1rem;
+        border-radius: 30px;
+        transition: all 0.3s ease;
+        cursor: pointer;
+    }
+
+    .button:hover {
+            background-color: white;
+            color: black;
+        }
+
+    .button-dark {
+            background-color: rgba(0, 0, 0, 0.6);
+           border-color: rgba(225, 225, 225, 0.3);
+        }
+
+    .button-dark:hover {
+            background-color: black;
+            color: white;
+            border-color: white;        
+        }
+
+    .card-section {
+        background-color: #f5f5f5;
+        padding: 80px 24px;
+        text-align: center;
+        }
+    
+    .card-section h2 {
+        font-size: 2rem;
+        margin-bottom: 48px;
+        color: #222;
+        }
+
+    .card-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        max-width: 1200px;
+        margin: 0 auto;
+        gap: 30px;
+        }
+
+    .card {
+        background-color: white;
+        border-radius: 10px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        transition: transform 0.6s ease, box-shadow 0.6s ease;
+        opacity: 0;
+        transform: translateY(40px);
+        }
+
+    .card.show {
+        opacity: 1;
+        transform: translateY(0);
+        }
+
+    .card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+
+    .card img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        }
+
+    .card-content {
+        padding: 20px;
+        }
+
+    .card-content h3 {
+        font-size: 1.3rem;
+        margin-bottom: 8px;
+        color: #222;
+        }
+
+    .card-content p {
+        font-size: .95rem;
+        color: #666;
+        line-height: 1.6;
+        margin-bottom: 16px;
+        }
+    
+    .card-content a {
+        text-decoration: none;
+        color: white;
+        background-color: #007BFF;
+        padding: 10px 20px;
+        border-radius: 8px;
+        display: inline-block;
+        transition: background-color 0.3s ease;
+        }
+    
+    .card-content a:hover {
+        background-color: #0056b3;
+    }
+
+    .footer {
+        background-color: #111;
+        color: white;
+        width: 100%;
+        text-align: center;
+        padding: 32px 24px;
+        }
+
+    .footer p {
+        color: #aaa;
+        font-size: .9rem;
+        }    
+
+    @media (max-width: 640px){
+        .hero-content h1 {
+            font-size: 2rem;
+        }
+
+        .hero-content p {
+            font-size: 1rem;
+        }
+
+        .card-content h3 {
+            padding: 48px 16px;
+        }
+    }
+
+    </style>
+</head>
+<body>
+    <!-- hero section -->
+    <section class="hero">
+        <video autoplay muted loop playsinline>
+        <source src="videos/Hero Furniture BG13.mp4" type="video/mp4">
+         </video>
+
+        <div class="hero-content">  
+            <h1>Your Place for Everything Furniture and Landscape</h1>
+            <p>We design and create inviting environments for your home and gatherings.</p>
+
+            <div class="hero-button">
+                <a href="#cards" class="button">Learn More</a>
+
+                <a href="auth/css-cheatsheet.html" class="button button-dark">CSS Cheatsheet</a>
+                <a href="auth/js-cheatsheet.html" class="button button-dark">JS Cheatsheet</a>
+        </div>
+      </div>
+    </section>
+    <!-- card section -->
+     <section id="card" class="card-section">
+        <h2>Our Featured Services</h2>
+        <div class="card-container">
+
+            <!--card 1-->
+            <div class="card">
+                <img src="images/Outside Furniture Card.jpeg" alt="Shrubs and Plants">
+                <h3>Shrubs and Plants</h3>
+                <p>Carefully selected greenery and flowering plants to bring life and color to your outdoor spaces.</p>
+                <a href="#">Read more</a>
+            </div>
+
+            <!--card 2-->
+            <div class="card">
+                <img src="images/Outside Furniture Card2.jpeg" alt="Backyard coverings">
+                <h3>Backyard coverings</h3>
+                <p>Pergolas, shad sails, and patio covers that transform your backyard into a comfortable retreat.</p>
+                <a href="#">Read more</a>
+            </div>
+
+            <!--card 3-->
+            <div class="card">
+                <img src="images/Hero Landscaping BG11.jpeg" alt="Walking paths">
+                <h3>Walking paths</h3>
+                <p>Beautifully laid pathways using natural stone, pavers, and creative landscape design.</p>
+                <a href="#">Read more</a>
+            </div>
+
+            <!--card 4-->
+            <div class="card">
+                <img src="images/Outside Furniture Card1.jpeg" alt="Patio Furniture">
+                <h3>Patio Furniture</h3>
+                <p>Beautiful furniture to enjoy while having familya and friend gatherings on your patio.</p>
+                <a href="#">Read more</a>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- footer section -->
+    <footer class="footer">
+        <p>&copy; <span id="year"></span> Furniture &amp; Landscape. All rights reserved.</p>
+    </footer>
+
+    <script>
+        //smooth scolling for any link that starts with #
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener("click", function (e) {
+                e.preventDefault();
+                var target= document.querySelector(this.getAttribute("href"));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: "smooth"
+                    }); //smooth scrolling animation
+                }
+            });
+        });
+        //Scroll-reveal animation for cards
+        var cards= document.querySelectorAll(".card");
+
+        function revealcards() {
+            var triggerBottom= window.innerHeight * 0.85; //trigger point for revealing cards 85% of the viewport height
+            cards.forEach(function(card) {
+                var cardTop= card.getBoundingClientRect().top; //get the top position of the card relative to the viewport
+                if (cardTop < triggerBottom) {
+                    card.classList.add("show"); //add the show class to reveal the card
+                } 
+            });
+
+        }
+
+        //run animation on scroll and once on page load
+        window.addEventListener("scroll", revealcards);
+        revealcards(); //initial check in case some cards are already in view on page load
+
+        //dynamoically update the year in the footer
+        document.getElementById("year").textContent= new Date().getFullYear();
+    </script>
+</body>
+</html>
